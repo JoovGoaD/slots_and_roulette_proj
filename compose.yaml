@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    environment:
+      CASINO_DB: /var/lib/casino/accounts.sqlite3
+    ports:
+      - "127.0.0.1:${CASINO_PORT:-8000}:8000"
+    volumes:
+      - casino_data:/var/lib/casino
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "from urllib.request import urlopen; urlopen('http://127.0.0.1:8000/health', timeout=2).close()"]
+      interval: 15s
+      timeout: 4s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  casino_data:

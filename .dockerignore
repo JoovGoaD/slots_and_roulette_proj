@@ -1,0 +1,12 @@
+*
+!Dockerfile
+!pyproject.toml
+!uv.lock
+!casino/__init__.py
+!casino/backend/__init__.py
+!casino/backend/server.py
+!casino/backend/server_store.py
+!casino/core/__init__.py
+!casino/core/accounts.py
+!casino/core/engine.py
+!casino/core/roulette.py

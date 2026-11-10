@@ -1,0 +1,6 @@
+/data/accounts.sqlite3*
+/server_data/
+/.venv/
+__pycache__/
+*.py[cod]
+/.idea/
